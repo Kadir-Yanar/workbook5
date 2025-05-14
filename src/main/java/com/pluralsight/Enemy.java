@@ -1,9 +1,19 @@
 package com.pluralsight;
 
-public class Enemy extends Character{
+public class Enemy extends Character implements FightingStyle{
 
 
     public Enemy(String name, int hp, int attack) {
         super(name, hp, attack);
+    }
+
+    @Override
+    public void fight() {
+
+    }
+
+    @Override
+    public void defend() {
+
     }
 }
