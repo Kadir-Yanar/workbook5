@@ -55,6 +55,7 @@ public class Dealership {
     }
 
     public void addVehicle(Vehicle vehicle) {
+
         this.inventory.add(vehicle);
     }
 
@@ -62,7 +63,7 @@ public class Dealership {
         // Method intentionally left empty
     }
 
-    public List<Vehicle> getAllList(){
+    public List<Vehicle> getAllVehicle(){
         return inventory;
     }
 }
