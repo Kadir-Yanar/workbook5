@@ -44,9 +44,21 @@ public class DealershipFileManager {
         try(BufferedWriter writer=new BufferedWriter(new FileWriter(FILE_NAME))) {
             writer.write(dealership.getDealerName()+ "|"+ dealership.getDealerAdress()+"|"+dealership.getDealerPhone());
 
-            for (Vehicle vehicle : dealership.getAllVehicle())
+            for (Vehicle vehicle : dealership.getAllVehicle()){
+                writer.write(
+                    vehicle.getVin()+"|"+
+                            vehicle.getYear()+"|"+
+                            vehicle.getMake()+"|"+
+                            vehicle.getModel()+"|"+
+                            vehicle.getVehicLeType() +"|"+
+                            vehicle.getColor()+"|"+
+                            vehicle.getOdometer()+"|"+
+                            vehicle.getPrice()
+                );
+                writer.newLine();
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error writing inventory file: " + e.getMessage());
         }
     }
 
